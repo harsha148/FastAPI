@@ -40,6 +40,14 @@ async def get_recent_tweets():
               Tweet('Musk', 'Musk123', time.time(), 'I am asexual #Open', 10000, 100, ['#Open'])]
     return tweets
 
+@app.get('/gettweetsbyuserid')
+async def get_recent_tweets(user_id:str=''):
+    tweets = [Tweet('Revanth', 'Musk123', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('Revanth', 'Musk123', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('Revanth', 'Musk123', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('Revanth', 'Musk123', time.time(), 'I am asexual #Open', 10000, 100, ['#Open'])]
+    return tweets
+
 
 @app.get('/trendingtweets')
 async def get_recent_tweets():
@@ -61,6 +69,26 @@ async def get_trending_users():
         User('NCB','@NCB123',True,'AP Future CM'),
         User('Jagan','@Jagan123',True,'AP CM')
     ]
+
+
+@app.get('/filterby')
+async def get_filtered_tweets(search:str=''):
+    if search[0]=='@':
+        return [
+            User('KCR','@Musk123',True, 'Twitter Owner'),
+            User('KTR','@NCB123',True,'AP Future CM'),
+            User('PK','@Jagan123',True,'AP CM')
+        ]
+    tweets = [Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open']),
+              Tweet('KCR', 'NCB143', time.time(), 'I am asexual #Open', 10000, 100, ['#Open'])]
+    return tweets
 
 # Tweet object
     # user_name str
